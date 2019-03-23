@@ -1,0 +1,118 @@
+@import 'colors';
+
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+%roboto {
+  font-family: 'Roboto', sans-serif;
+  color: $color-white;
+}
+
+%bold {
+  font-weight: $font-weight-bold;
+}
+
+%medium {
+  font-weight: $font-weight-medium;
+}
+
+%regular {
+  font-weight: $font-weight-regular;
+}
+
+%R1 {
+  font-size: 80px;
+  letter-spacing: 0.8px;
+  line-height: 88px;
+}
+
+%R2 {
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  line-height: 30px;
+}
+
+%R3 {
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  line-height: 28px;
+}
+
+%R4 {
+  font-size: 16px;
+  letter-spacing: 0.16px;
+  line-height: 24px;
+}
+
+.R1B {
+  @extend %roboto;
+  @extend %R1;
+  @extend %bold;
+}
+
+.R1M {
+  @extend %roboto;
+  @extend %R1;
+  @extend %medium;
+}
+
+.R1R {
+  @extend %roboto;
+  @extend %R1;
+  @extend %regular;
+}
+
+.R2B {
+  @extend %roboto;
+  @extend %R2;
+  @extend %bold;
+}
+
+.R2M {
+  @extend %roboto;
+  @extend %R2;
+  @extend %medium;
+}
+
+.R2R {
+  @extend %roboto;
+  @extend %R1;
+  @extend %regular;
+}
+
+.R3B {
+  @extend %roboto;
+  @extend %R3;
+  @extend %bold;
+}
+
+.R3M {
+  @extend %roboto;
+  @extend %R3;
+  @extend %medium;
+}
+
+.R3R {
+  @extend %roboto;
+  @extend %R3;
+  @extend %regular;
+}
+
+.R4B {
+  @extend %roboto;
+  @extend %R4;
+  @extend %bold;
+}
+
+.R4M {
+  @extend %roboto;
+  @extend %R4;
+  @extend %medium;
+}
+
+.R4R {
+  @extend %roboto;
+  @extend %R4;
+  @extend %regular;
+}

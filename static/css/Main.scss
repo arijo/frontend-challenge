@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'fonts';
+
+body {
+
+    background-color: $color-dark;
+
+    .title {
+        width: 580px;
+    }
+
+    a, span {
+        color: $color-white;
+    }
+
+}
