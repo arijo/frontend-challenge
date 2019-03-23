@@ -45,73 +45,73 @@ $font-weight-regular: 400;
   line-height: 24px;
 }
 
-.R1B {
+%R1B {
   @extend %roboto;
   @extend %R1;
   @extend %bold;
 }
 
-.R1M {
+%R1M {
   @extend %roboto;
   @extend %R1;
   @extend %medium;
 }
 
-.R1R {
+%R1R {
   @extend %roboto;
   @extend %R1;
   @extend %regular;
 }
 
-.R2B {
+%R2B {
   @extend %roboto;
   @extend %R2;
   @extend %bold;
 }
 
-.R2M {
+%R2M {
   @extend %roboto;
   @extend %R2;
   @extend %medium;
 }
 
-.R2R {
+%R2R {
   @extend %roboto;
   @extend %R1;
   @extend %regular;
 }
 
-.R3B {
+%R3B {
   @extend %roboto;
   @extend %R3;
   @extend %bold;
 }
 
-.R3M {
+%R3M {
   @extend %roboto;
   @extend %R3;
   @extend %medium;
 }
 
-.R3R {
+%R3R {
   @extend %roboto;
   @extend %R3;
   @extend %regular;
 }
 
-.R4B {
+%R4B {
   @extend %roboto;
   @extend %R4;
   @extend %bold;
 }
 
-.R4M {
+%R4M {
   @extend %roboto;
   @extend %R4;
   @extend %medium;
 }
 
-.R4R {
+%R4R {
   @extend %roboto;
   @extend %R4;
   @extend %regular;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {ConnectedRouter} from 'connected-react-router';
-import Home from './Home.jsx';
-import Movie from './Movie.jsx';
+import Home from './modules/home/Home.jsx';
+import Movie from './modules/movie/Movie.jsx';
 
 export default ({history}) => {
     return (
