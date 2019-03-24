@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <Row
+    align="normal"
+    component="div"
+    debug={false}
+    justify="start"
+    nogutter={false}
+    style={Object {}}
+  >
+    <Col
+      component="div"
+      debug={false}
+      lg={null}
+      md={null}
+      offset={Object {}}
+      pull={Object {}}
+      push={Object {}}
+      sm={4}
+      style={Object {}}
+      xl={null}
+      xs={null}
+    >
+      <div
+        className="logo"
+      />
+    </Col>
+  </Row>
+  <Row
+    align="normal"
+    component="div"
+    debug={false}
+    justify="start"
+    nogutter={false}
+    style={Object {}}
+  >
+    <Col
+      component="div"
+      debug={false}
+      lg={null}
+      md={null}
+      offset={Object {}}
+      pull={Object {}}
+      push={Object {}}
+      sm={12}
+      style={Object {}}
+      xl={null}
+      xs={null}
+    >
+      <div
+        className="searchBar"
+      >
+        <span
+          className="magnifier"
+        />
+        <input
+          onKeyUp={[Function]}
+          placeholder="Search movies ..."
+        />
+      </div>
+    </Col>
+  </Row>
+</div>
+`;

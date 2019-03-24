@@ -1,36 +1,34 @@
+import lo from "lodash";
 import React from 'react';
-import {Container, Row, Col} from 'react-grid-system';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {Container} from 'react-grid-system';
 import style from '../../../css/modules/home/Home.scss';
+import Spin from '../../core/Spin.jsx';
+import SearchBar from './components/SearchBar.jsx';
+import SearchResults from './components/SearchResults.jsx';
 
-export default (props) => {
+const Home = ({isFetching}) => {
     return (
-        <Container className={style.container}>
-            <Row>
-                <Col sm={4}>
-                    <div className={style.logo}></div>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <div className={style.searchBar}>
-                        <span className={style.magnifier}></span>
-                        <input placeholder={'Search movies ...'}/>
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <div className={style.illustrationEmpty}></div>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <div className={style.marketingCopy}>
-                        <div className={style.question}>Don't know what to search?</div>
-                        <div className={style.proposal}>Here's an offer you can't refuse</div>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+        <Spin isFetching={isFetching}>
+            <Container className={style.container}>
+                <SearchBar />
+                <SearchResults />
+            </Container>
+        </Spin>
     )
 }
+
+Home.propTypes = {
+    isFetching: PropTypes.bool
+};
+
+const mapState = (state) => {
+    return {
+        isFetching: lo.get(state, 'home.isFetching', false)
+    }
+}
+
+Home.displayName = 'Home';
+
+export default connect(mapState)(Home);

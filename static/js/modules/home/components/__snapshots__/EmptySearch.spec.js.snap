@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <Row
+    align="normal"
+    component="div"
+    debug={false}
+    justify="start"
+    nogutter={false}
+    style={Object {}}
+  >
+    <Col
+      component="div"
+      debug={false}
+      lg={null}
+      md={null}
+      offset={Object {}}
+      pull={Object {}}
+      push={Object {}}
+      sm={12}
+      style={Object {}}
+      xl={null}
+      xs={null}
+    >
+      <div
+        className="illustrationEmpty"
+      />
+    </Col>
+  </Row>
+  <Row
+    align="normal"
+    component="div"
+    debug={false}
+    justify="start"
+    nogutter={false}
+    style={Object {}}
+  >
+    <Col
+      component="div"
+      debug={false}
+      lg={null}
+      md={null}
+      offset={Object {}}
+      pull={Object {}}
+      push={Object {}}
+      sm={12}
+      style={Object {}}
+      xl={null}
+      xs={null}
+    >
+      <div
+        className="marketingCopy"
+      >
+        <div
+          className="question"
+        >
+          Don't know what to search?
+        </div>
+        <div
+          className="proposal"
+        >
+          Here's an offer you can't refuse
+        </div>
+      </div>
+    </Col>
+  </Row>
+</div>
+`;

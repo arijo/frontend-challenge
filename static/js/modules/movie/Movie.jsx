@@ -2,7 +2,7 @@ import React from 'react';
 import style from '../../../css/modules/home/Home.scss';
 import {Link} from "react-router-dom";
 
-export default (props) => {
+const Movie = () => {
     return (
         <div>
             <h1 className={`${style.title} ${style.R1R}`}>MOVIE PAGE PLACEHOLDER</h1>
@@ -14,3 +14,7 @@ export default (props) => {
         </div>
     )
 }
+
+Movie.displayName = 'Movie';
+
+export default Movie;

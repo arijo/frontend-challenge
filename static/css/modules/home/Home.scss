@@ -3,6 +3,7 @@
 
 .container {
 
+  height: 100vh;
   padding-top: 24px;
 
   .logo {
@@ -61,7 +62,6 @@
 
     .question {
       @extend %R3R;
-      width: 325px;
     }
 
     .proposal {

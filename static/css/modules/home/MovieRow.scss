@@ -1,0 +1,12 @@
+@import '../../colors';
+@import '../../fonts';
+
+.movieRow {
+
+  margin-top: 12px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+}
