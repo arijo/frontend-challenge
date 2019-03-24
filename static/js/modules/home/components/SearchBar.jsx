@@ -17,11 +17,6 @@ class SearchBar extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col sm={4}>
-                        <div className={style.logo}></div>
-                    </Col>
-                </Row>
-                <Row>
                     <Col sm={12}>
                         <div className={style.searchBar}>
                             <span className={style.magnifier}></span>

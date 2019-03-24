@@ -2,7 +2,7 @@ import lo from "lodash";
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {Container} from 'react-grid-system';
+import {Col, Container, Row} from 'react-grid-system';
 import style from '../../../css/modules/home/Home.scss';
 import Spin from '../../core/Spin.jsx';
 import SearchBar from './components/SearchBar.jsx';
@@ -12,6 +12,11 @@ const Home = ({isFetching}) => {
     return (
         <Spin isFetching={isFetching}>
             <Container className={style.container}>
+                <Row>
+                    <Col sm={4}>
+                        <div className={style.logo} />
+                    </Col>
+                </Row>
                 <SearchBar />
                 <SearchResults />
             </Container>

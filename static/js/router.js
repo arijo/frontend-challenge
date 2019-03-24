@@ -11,7 +11,7 @@ const Routes = ({history}) => {
             <div>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/movie" component={Movie} />
+                    <Route exact path="/movie/:imdbID" component={Movie} />
                 </Switch>
             </div>
         </ConnectedRouter>

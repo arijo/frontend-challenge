@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 import style from '../../../../css/modules/home/MovieCard.scss';
 
 
@@ -26,15 +27,17 @@ class MovieCard extends React.Component {
             classNames.push(style.showInfo);
         }
         return (
-            <div className={classNames.join(' ')} style={inlineStyles} onMouseEnter={this.onMouseEnter}
-                 onMouseLeave={this.onMouseLeave}>
-                <div className={style.movieInfo}>
-                    <div className={style.movieInfoFooter}>
-                        <div className={style.movieTitle}>{movie.Title}</div>
-                        <div className={style.movieYear}>{movie.Year}</div>
+            <Link to={`/movie/${movie.imdbID}`}>
+                <div className={classNames.join(' ')} style={inlineStyles} onMouseEnter={this.onMouseEnter}
+                     onMouseLeave={this.onMouseLeave}>
+                    <div className={style.movieInfo}>
+                        <div className={style.movieInfoFooter}>
+                            <div className={style.movieTitle}>{movie.Title}</div>
+                            <div className={style.movieYear}>{movie.Year}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         )
     }
 }
