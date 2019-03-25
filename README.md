@@ -1,8 +1,9 @@
 ## Setup
 
-1. npm install
-2. npm start
-3. http://localhost:8080
+1. git checkout arijo
+2. npm install
+3. npm start
+4. http://localhost:8080
 
 ## Tests
 
