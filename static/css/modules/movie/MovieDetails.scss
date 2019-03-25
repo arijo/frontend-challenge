@@ -71,7 +71,6 @@
       width: 100%;
       background-repeat: no-repeat;
       background-position: center center;
-      //background-size: contain;
     }
 
     .movieRating {
@@ -148,7 +147,7 @@
 
     }
 
-    .addToFavourites {
+    .addToFavourites, .addedToFavourites {
 
       @extend %ratings;
       margin-left: 15px;
@@ -158,13 +157,17 @@
 
         @extend %logoWrapper;
 
-        .heartIcon {
+        .heartIcon, .heartIconFull {
           @extend %logo;
           position: relative;
           top: 9px;
           width: 24px;
           height: 24px;
           background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eicon-heart-grey%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Styleguide-presentation' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='8.icons' transform='translate(-570.000000, -344.000000)'%3E%3Cg id='icon-heart-grey' transform='translate(570.000000, 344.000000)'%3E%3Crect id='Rectangle-13' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cpath d='M12,5.7384007 C24.3159972,-3.87751835 26.3133219,14.4898505 12,20 C-2.31332192,15.570284 -0.31599724,-3.87751835 12,5.7384007 Z' id='Rectangle-12' stroke='%237A8C99' stroke-width='2'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .heartIconFull {
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eicon-heart-full%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Styleguide-presentation' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='8.icons' transform='translate(-610.000000, -344.000000)'%3E%3Cg id='24x24/icon_heart' transform='translate(610.000000, 344.000000)'%3E%3Crect id='Rectangle-13' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cpath d='M12,6.28384428 C24.3324939,-3.604485 26.3324939,15.2832147 12,20.9494617 C-2.33249393,16.3942559 -0.332493933,-3.604485 12,6.28384428 Z' id='Rectangle-12' stroke='%23FFFFFF' stroke-width='2' fill='%23FFFFFF'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
       }
@@ -188,6 +191,24 @@
           color: $color-white;
         }
 
+      }
+
+    }
+
+    .addedToFavourites {
+
+      background-color: $color-red;
+      cursor: default;
+
+      .addedToFavouritesText {
+        position: relative;
+        top: 9px;
+        left: -12px;
+        color: $color-white;
+      }
+
+      &:hover {
+        border: 1px solid $color-mid-grey;
       }
 
     }

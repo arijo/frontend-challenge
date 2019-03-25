@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import style from '../../../../css/modules/home/MovieCard.scss';
+import lo from "lodash";
+import {connect} from "react-redux";
 
 
 class MovieCard extends React.Component {
@@ -18,7 +20,7 @@ class MovieCard extends React.Component {
         this.setState({showInfo: false});
     }
     render() {
-        const {movie} = this.props;
+        const {movie, isFavourite} = this.props;
         const inlineStyles = {
             backgroundImage: `url(${movie.Poster})`
         }
@@ -35,6 +37,9 @@ class MovieCard extends React.Component {
                             <div className={style.movieTitle}>{movie.Title}</div>
                             <div className={style.movieYear}>{movie.Year}</div>
                         </div>
+                        <div className={isFavourite ? style.addedToFavourites : style.addToFavourites}>
+                            <span className={isFavourite ? style.heartIconFull : style.heartIcon}/>
+                        </div>
                     </div>
                 </div>
             </Link>
@@ -45,7 +50,15 @@ class MovieCard extends React.Component {
 MovieCard.displayName = 'MovieCard';
 
 MovieCard.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.object,
+    isFavourite: PropTypes.bool,
 }
 
-export default MovieCard;
+const mapState = (state, ownProps) => {
+    const favourites = lo.get(state, 'movie.favourites', []);
+    return {
+        isFavourite: favourites.some(imdbID => lo.get(ownProps, 'movie.imdbID', null) === imdbID)
+    }
+}
+
+export default connect(mapState)(MovieCard)

@@ -4,15 +4,27 @@ import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {Col, Row} from "react-grid-system";
 import style from '../../../../css/modules/movie/MovieDetails.scss';
+import store from '../../../store';
+import {setFavourites} from '../actions';
 import {getRatings} from '../../../core/util';
 import EmptySearch from "../../home/components/EmptySearch.jsx";
+import {connect} from "react-redux";
+
+store.subscribe(()=>{
+    const {movie: {favourites}} = store.getState();
+    localStorage.setItem('movie.favourites', JSON.stringify(favourites))
+})
 
 class MovieDetails extends React.Component {
     constructor(props) {
         super(props);
+        this.onAddToFavourites = this.onAddToFavourites.bind(this);
+    }
+    onAddToFavourites(imdbID) {
+        store.dispatch(setFavourites(imdbID));
     }
     render() {
-        const {movie} = this.props;
+        const {movie, isFavourite} = this.props;
         if (!movie) return <EmptySearch/>
         const ratings = getRatings(movie.Ratings);
         const castList = lo.get(movie, 'Actors', '').split(',');
@@ -64,12 +76,22 @@ class MovieDetails extends React.Component {
                                             {lo.get(ratings, 'rottenTomatoes', 'N/A')}
                                         </span>
                                     </span>
-                                    <span className={style.addToFavourites}>
+                                    <span className={!isFavourite ? style.addToFavourites : style.addedToFavourites}
+                                          onClick={() => {
+                                              if (!isFavourite) {
+                                                  this.onAddToFavourites(movie.imdbID)
+                                              }
+                                          }}>
                                         <span className={style.heartIconWrapper}>
-                                            <span className={style.heartIcon}></span>
+                                            <span className={!isFavourite ? style.heartIcon : style.heartIconFull}/>
                                         </span>
-                                        <span className={style.addToFavouritesText}>
+                                        <span className={style.addToFavouritesText}
+                                              style={!isFavourite ? {display: 'inline-block'} : {display: 'none'}}>
                                             Add to favourites
+                                        </span>
+                                        <span className={style.addedToFavouritesText}
+                                              style={isFavourite ? {display: 'inline-block'} : {display: 'none'}}>
+                                            Added
                                         </span>
                                     </span>
                                 </div>
@@ -121,7 +143,16 @@ class MovieDetails extends React.Component {
 }
 
 MovieDetails.propTypes = {
-    movie: PropTypes.object
+    movie: PropTypes.object,
+    isFavourite: PropTypes.bool,
+    onAddToFavourites: PropTypes.func
 }
 
-export default MovieDetails;
+const mapState = (state, ownProps) => {
+    const favourites = lo.get(state, 'movie.favourites', []);
+    return {
+        isFavourite: favourites.some(imdbID => lo.get(ownProps, 'movie.imdbID', null) === imdbID)
+    }
+}
+
+export default connect(mapState)(MovieDetails)

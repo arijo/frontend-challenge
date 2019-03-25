@@ -1,0 +1,1 @@
+export const SET_FAVOURITES = 'movies/SET_FAVOURITES'

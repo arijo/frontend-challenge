@@ -18,32 +18,6 @@ exports[`renders correctly 1`] = `
       offset={Object {}}
       pull={Object {}}
       push={Object {}}
-      sm={4}
-      style={Object {}}
-      xl={null}
-      xs={null}
-    >
-      <div
-        className="logo"
-      />
-    </Col>
-  </Row>
-  <Row
-    align="normal"
-    component="div"
-    debug={false}
-    justify="start"
-    nogutter={false}
-    style={Object {}}
-  >
-    <Col
-      component="div"
-      debug={false}
-      lg={null}
-      md={null}
-      offset={Object {}}
-      pull={Object {}}
-      push={Object {}}
       sm={12}
       style={Object {}}
       xl={null}

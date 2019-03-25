@@ -6,7 +6,6 @@ const ROOT_REDUCER_KEY = 'home';
 const initialState = {
     isFetching: false,
     searchResults: [],
-    favorites: [],
     error: null
 }
 

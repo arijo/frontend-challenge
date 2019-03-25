@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
 import {connectRouter} from 'connected-react-router';
-import * as movies from './modules/home/state';
+import * as home from './modules/home/state';
+import * as movie from './modules/movie/state';
 
 const states = [
-    movies
+    home,
+    movie
 ];
 
 const reducersMountData = states.reduce((acc, state) => {

@@ -6,7 +6,8 @@ import createRouteReducer from './reducers';
 
 export const history = createBrowserHistory();
 
-const initialState = {};
+const favourites = localStorage.getItem('movie.favourites') || '[]';
+const initialState = {movie: {favourites: JSON.parse(favourites)}};
 const middleware = [
     thunk,
     routerMiddleware(history)
